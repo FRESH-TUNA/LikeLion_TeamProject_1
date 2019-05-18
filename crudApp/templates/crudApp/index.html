@@ -1,9 +1,19 @@
-<a href="create">Create</a>
+<head>
+    <style>
+    a.title {
+        text-decoration : none;
+        color : green
+    }
+    
+    </style>
+</head>
+
+<a href="create">새 글 만들기</a>
 {% for post in posts %}
-    <h1>{{post.title}}</h1>
+    <h1><a href="{{post.id}}/detail" class = 'title'>{{post.title}}</a></h1>
     <p>{{post.summary}}</p>
     <p>{{post.pub_date}}</p>
-    <a href="{{post.id}}/detail">...more</a>
-    <a href="{{post.id}}/update">update</a>
-    <a href="{{post.id}}/delete">delete</a>
+    <a href="{{post.id}}/update">수정</a>
+    <a href="{{post.id}}/delete">삭제</a>
+    <br>
 {% endfor %}

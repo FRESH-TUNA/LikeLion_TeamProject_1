@@ -1,5 +1,22 @@
-<h1> 자세한 본문 내용 </h1>
-<br><br>
 <h1> 제목: {{post.title}} </h1>
 <p> 작성 날짜: {{post.pub_date}} </p>
 <p> 자세한 본문: {{post.content}} </p>
+
+<br><br><br><br><br><br>
+{% for comment in post.comment_set.all %}
+    <p>{{comment.author}}</p>
+    <p>{{comment.detail}}</p>
+    <p>{{comment.pub_date}}</p>
+{% endfor %}
+<br>
+
+
+<br><br><br><br><br><br>
+댓글 쓰기
+<form action="addComment" method="post">
+{% csrf_token %}
+    <h4>내용: </h4>
+    <textarea type="text" name="content" cols='200' rows="10"></textarea>
+    <br><br>
+    <input type="submit" value="댓글달기">
+</form>

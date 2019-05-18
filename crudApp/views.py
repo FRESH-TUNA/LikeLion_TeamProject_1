@@ -50,3 +50,13 @@ def delete(request, post_id):
     else:
         post.delete()
         return redirect('index')
+
+
+def addComment(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    comment = Comment()
+    comment.post = Post.object.get(pk = post_id)
+    comment.content = request.POST['content']
+    comment.save()
+    comments = get_object_or_404(Comment, pk=post_id).objects.all()
+    return render(request, 'crudApp/detail.html', {'post': post, 'comments':comments})
