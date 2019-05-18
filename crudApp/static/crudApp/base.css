@@ -1,0 +1,18 @@
+body {
+    margin: 0px;
+}
+
+header {
+    background-color: azure;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 5px;
+}
+
+p#title {
+    font-weight: bold;
+}

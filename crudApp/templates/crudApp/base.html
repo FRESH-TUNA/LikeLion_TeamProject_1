@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/base.css' %}">
+    {% block stylesheet %}
+    {% endblock stylesheet %}
+</head>
+<body>
+    <header>
+        <p id="title">모두의 수다</p>
+        <a href="create" class="myButton">새 글 만들기</a>
+    </header>
+    
+    {% block content %}
+    {% endblock content %}
+
+    <footer>
+    
+    </footer>
+</body>
+</html>
+
+ 

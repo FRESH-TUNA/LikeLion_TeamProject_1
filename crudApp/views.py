@@ -3,6 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 from .forms import *
 from django.utils import timezone
+import pdb 
+
+
 
 def index(request):
     posts = Post.objects.all()
