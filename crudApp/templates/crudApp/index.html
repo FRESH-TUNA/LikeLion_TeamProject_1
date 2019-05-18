@@ -1,0 +1,9 @@
+<a href="create">Create</a>
+{% for post in posts %}
+    <h1>{{post.title}}</h1>
+    <p>{{post.summary}}</p>
+    <p>{{post.pub_date}}</p>
+    <a href="{{post.id}}/detail">...more</a>
+    <a href="{{post.id}}/update">update</a>
+    <a href="{{post.id}}/delete">delete</a>
+{% endfor %}
