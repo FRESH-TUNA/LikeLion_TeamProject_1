@@ -11,16 +11,7 @@ def index(request):
 def detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     return render(request, 'crudApp/detail.html', {'post': post})
-'''
-def create(request):
-    if request.method == "GET":
-        return render(request, "crudApp/create.html")
-    else:
-        form = PostForm(request.POST)
-        form.save()
-        posts = Post.objects.all()
-        return render(request, "crudApp/index.html", {'posts': posts})
-'''
+
 def create(request):
     if request.method == "GET":
         return render(request, "crudApp/create.html")
@@ -55,8 +46,7 @@ def delete(request, post_id):
 def addComment(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
     comment = Comment()
-    comment.post = Post.object.get(pk = post_id)
+    comment.post = post
     comment.content = request.POST['content']
     comment.save()
-    comments = get_object_or_404(Comment, pk=post_id).objects.all()
-    return render(request, 'crudApp/detail.html', {'post': post, 'comments':comments})
+    return redirect('/' + str(post_id) + '/detail')

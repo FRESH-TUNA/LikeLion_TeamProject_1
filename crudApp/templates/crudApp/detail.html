@@ -6,6 +6,7 @@
 {% for comment in post.comment_set.all %}
     <p>{{comment.author}}</p>
     <p>{{comment.detail}}</p>
+    <p>{{comment.content}}</p>
     <p>{{comment.pub_date}}</p>
 {% endfor %}
 <br>
