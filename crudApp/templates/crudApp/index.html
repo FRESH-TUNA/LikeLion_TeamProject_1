@@ -1,19 +1,76 @@
-<head>
-    <style>
-    a.title {
-        text-decoration : none;
-        color : green
+<link type='text/css' rel='stylesheet' href='md.css'>
+<style>
+    @font-face { font-family: 'Binggrae-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal; }
+    @font-face { font-family: 'KimNamyun';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KimNamyun.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; }
+    @font-face { font-family: 'HangeulNuri-Bold'; 
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff'); 
+        font-weight: normal; 
+        font-style: normal; }
+    .cont .title {
+        font-family : 'Binggrae-Bold';
     }
-    
-    </style>
-</head>
-
+    .cont .content {
+        font-family : 'KimNamyun';
+        font-size : 2.0em;
+    }
+    .cont {
+        background-color : #CCCCCC;
+    }
+    .contcont{
+        background-color : #DDDDDD;
+        width : 80%;
+    }
+    body *{
+        font-family : 'HangeulNuri-Bold';
+    }
+    html {
+        background-color : #AA0000;
+    }
+    input, button, a {
+        margin-left:10px;
+        margin-right : 10px;
+        color : white;
+        background-color : #000055;
+        padding-left : 30px;
+        padding-right : 30px;
+        padding-top : 10px;
+        padding-bottom : 10px;
+        border-radius: 10%;
+        letter-spacing : 5px;
+        text-decoration : none;
+    }
+    .comment {
+        background-color : gray;
+    }
+    div {
+        padding-left : 10px;
+    }
+    #commentText {
+        background-color : #EEEEEE;
+}
+</style>
+<br>
 <a href="create">새 글 만들기</a>
+<br><br>
 {% for post in posts %}
-    <h1><a href="{{post.id}}/detail" class = 'title'>{{post.title}}</a></h1>
-    <p>{{post.summary}}</p>
-    <p>{{post.pub_date}}</p>
-    <a href="{{post.id}}/update">수정</a>
-    <a href="{{post.id}}/delete">삭제</a>
+<br>
+    <div class="cont">
+    <br>
+        <h1><a href="{{post.id}}/detail" class = 'title'>{{post.title}}</a></h1>
+        <br><br>
+        <p>{{post.summary}}</p>
+        <br>
+        <p>{{post.pub_date}}</p>
+        <br><br>
+        <a href="{{post.id}}/update">수정</a>
+        <a href="{{post.id}}/delete">삭제</a>
+        <br><br><br>
+    </div><br>
     <br>
 {% endfor %}

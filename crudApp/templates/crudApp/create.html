@@ -1,4 +1,62 @@
-<h1> 추가하자!! </h1>
+<link type='text/css' rel='stylesheet' href='md.css'>
+<style>
+	@font-face { font-family: 'Binggrae-Bold';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal; }
+	@font-face { font-family: 'KimNamyun';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KimNamyun.woff') format('woff'); 
+	    font-weight: normal; 
+	    font-style: normal; }
+	@font-face { font-family: 'HangeulNuri-Bold'; 
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff'); 
+	    font-weight: normal; 
+	    font-style: normal; }
+	.cont .title {
+	    font-family : 'Binggrae-Bold';
+	}
+	.cont .content {
+	    font-family : 'KimNamyun';
+	    font-size : 2.0em;
+	}
+	.cont {
+	    background-color : #CCCCCC;
+	}
+	.contcont{
+	    background-color : #DDDDDD;
+	    width : 80%;
+	}
+	body *{
+	    font-family : 'HangeulNuri-Bold';
+	}
+	html {
+	    background-color : #AA0000;
+	}
+	input, button, a {
+	    margin-left:10px;
+	    margin-right : 10px;
+	    color : white;
+	    background-color : #000055;
+	    padding-left : 30px;
+	    padding-right : 30px;
+	    padding-top : 10px;
+	    padding-bottom : 10px;
+	    border-radius: 10%;
+	    letter-spacing : 5px;
+	    text-decoration : none;
+	}
+	.comment {
+	    background-color : gray;
+	}
+	div {
+	    padding-left : 10px;
+	}
+	#commentText {
+	    background-color : #EEEEEE;
+}
+</style>
+
+<h1> 게시글 추가하기 </h1>
 <form action="create" method="post">
 {% csrf_token %}
     <h4>제목: </h4>
@@ -6,5 +64,5 @@
     <h4>내용: </h4>
     <textarea type="text" name="content" cols="30" rows="10"></textarea>
     <br><br>
-    <input type="submit" value="제출하기">
+    <input type="submit" value="추가하기">
 </form>
