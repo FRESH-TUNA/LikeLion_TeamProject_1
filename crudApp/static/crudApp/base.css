@@ -17,7 +17,7 @@ header {
     align-items: center;
     justify-content: space-between;
     
-    padding: 5px;
+    padding: 5px 5px 5px 10px;
 }
 
 footer {
@@ -32,7 +32,7 @@ footer {
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     
     padding: 5px;
 
@@ -45,4 +45,8 @@ footer {
 
 p#title {
     font-weight: bold;
+}
+
+#buttonWrapper {
+    padding-right: 30px;
 }

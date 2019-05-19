@@ -9,10 +9,6 @@ a.title {
     color : rgb(140, 81, 248)
 }
 
-body {
-
-}
-
 #container {
     display: flex;
     flex-wrap: wrap;
