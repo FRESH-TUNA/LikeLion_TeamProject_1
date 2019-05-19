@@ -1,0 +1,48 @@
+body {
+    margin: 0px;
+    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
+	background-attachment: fixed;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+
+    background-color: rgb(249, 255, 255);
+
+    height: 40px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 5px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    z-index: 1;
+
+    background-color: rgb(124, 124, 124);
+
+    height: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 5px;
+
+    font-weight: bold;
+}
+
+#page-content {
+    padding: 50px;
+}
+
+p#title {
+    font-weight: bold;
+}
