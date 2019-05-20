@@ -16,7 +16,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     padding: 5px 5px 5px 10px;
 }
 
@@ -25,18 +25,43 @@ footer {
     bottom: 0px;
     z-index: 1;
 
-    background-color: rgb(249, 255, 255);
+    background-color: rgb(177, 180, 184);
+    color: #fff;
 
-    height: 20px;
+    height: 200px;
     width: 100%;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     
-    padding: 5px;
+    align-items: center;
+
+    justify-content: space-between;
+    
+    padding: 0;
 
     font-weight: bold;
+}
+
+/*
+#likelion{
+    position:static;
+    float:right;
+}
+*/
+/* .left{
+    position:static;
+    float:left;
+}
+
+.center{
+    float: right;
+    position: relative;
+    left: -50%;
+} */
+.footerEle {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 40px;
 }
 
 #page-content {

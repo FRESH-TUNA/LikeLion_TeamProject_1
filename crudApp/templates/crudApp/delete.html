@@ -1,6 +1,15 @@
+{% extends 'crudApp/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/create.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
 <h1> 지우자</h1>
 <form action="delete" method="post">
 {% csrf_token %}
     <h4>정말 <strong>{{post.title}}</strong> 지울꺼니??</h4>
     <input type="submit" value="제출하기">
 </form>
+{% endblock content%}
