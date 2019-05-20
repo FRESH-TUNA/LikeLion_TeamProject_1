@@ -2,9 +2,6 @@
 html, body {
     height: 100%;
     margin: 0px;
-
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg");
-	background-attachment: fixed;
 }
 
 header {
@@ -28,7 +25,7 @@ footer {
     bottom: 0px;
     z-index: 1;
 
-    background-color: rgb(124, 124, 124);
+    background-color: rgb(249, 255, 255);
 
     height: 20px;
     width: 100%;
