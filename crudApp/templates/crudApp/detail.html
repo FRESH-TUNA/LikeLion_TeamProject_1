@@ -1,23 +1,50 @@
-<h1> 제목: {{post.title}} </h1>
-<p> 작성 날짜: {{post.pub_date}} </p>
-<p> 자세한 본문: {{post.content}} </p>
+{% extends 'crudApp/base.html' %}
+{% load static %}
 
-<br><br><br><br><br><br>
-{% for comment in post.comment_set.all %}
-    <p>{{comment.author}}</p>
-    <p>{{comment.detail}}</p>
-    <p>{{comment.content}}</p>
-    <p>{{comment.pub_date}}</p>
-{% endfor %}
-<br>
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/create.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+    <center class="cont">
+        <br><br><br><br><br><br>
+            <h1 class="title"> {{post.title}} </h1>
+            <br><br><br>
+            <div class="contcont">
+            <br><br><br>
+            <i><p style="width : 50%" class = "content">{{post.content}} </p></i>
+            <br><br><br>
+            </div>
+            <br><br><br>
+            <p>{{post.pub_date}} </p>
+            <br><br><br><br><br><br>
+    </center>
 
 
-<br><br><br><br><br><br>
-댓글 쓰기
-<form action="addComment" method="post">
-{% csrf_token %}
-    <h4>내용: </h4>
-    <textarea type="text" name="content" cols='200' rows="10"></textarea>
-    <br><br>
-    <input type="submit" value="댓글달기">
-</form>
+
+        <br><br><br><br><br><br>
+        
+        {% for comment in post.comment_set.all %}
+            <div class ="comment">
+                <br>
+                <p>{{comment.author}}</p>
+                <p>{{comment.content}}</p>
+                <p>{{comment.pub_date}}</p>
+                <br>
+            </div>
+            <br>
+        {% endfor %}
+        <br>
+        
+
+
+        <br><br><br><br><br><br>
+        <h1>댓글 쓰기</h1>
+        <form action="addComment" method="post">
+        {% csrf_token %}
+            <h4>내용: </h4>
+            <textarea type="text" name="content" cols="50"rows="10" id="commentText"></textarea>
+            <br><br>
+            <input type="submit" value="댓글달기">
+        </form>
+{% endblock content %}
