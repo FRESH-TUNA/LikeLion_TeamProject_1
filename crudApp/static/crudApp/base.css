@@ -40,22 +40,6 @@ footer {
     font-weight: bold;
 }
 
-/*
-#likelion{
-    position:static;
-    float:right;
-}
-*/
-/* .left{
-    position:static;
-    float:left;
-}
-
-.center{
-    float: right;
-    position: relative;
-    left: -50%;
-} */
 .footerEle {
     font-size: 1.5em;
     font-weight: bold;
@@ -64,6 +48,7 @@ footer {
 
 #page-content {
     padding: 50px;
+    padding-bottom: 200px;
 }
 
 p#title {
@@ -73,3 +58,21 @@ p#title {
 #buttonWrapper {
     padding-right: 30px;
 }
+
+@media (max-width: 960px) {
+    footer {
+        justify-content: center;
+    }
+    #footerCopy {
+        display: none;
+    }
+}
+
+@media (max-width: 1600px) {
+    #footerMember {
+        display: none;
+    }
+}
+
+
+
