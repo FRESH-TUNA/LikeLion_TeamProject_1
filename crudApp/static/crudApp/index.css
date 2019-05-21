@@ -4,11 +4,6 @@
     font-family: 'S-CoreDream-3Light';
 }
 
-body {
-	background-image: url("https://storywarren.com/wp-content/uploads/2016/09/space-1.jpg");
-	background-attachment: fixed;
-}
-
 a.title {
     text-decoration : none;
     color : rgb(140, 81, 248)
@@ -43,6 +38,10 @@ a.title {
     align-items: center;
 }
 
+.pagination {
+	width: 200px;
+	background-color: #ffffff;
+}
 
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;

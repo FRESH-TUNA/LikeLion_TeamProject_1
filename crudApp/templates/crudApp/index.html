@@ -2,23 +2,45 @@
 {% load static %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/index.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'crudApp/index.css' %}">
 {% endblock stylesheet %}
 
 {% block content %}
-    <div id="container">
-        {% for post in posts %}
-            <div class="post">
-                <h1><a href="{{post.id}}/detail" class = 'title'>{{post.title}}</a></h1>
-                <p>{{post.summary}}</p>
-                <div class="postFooter">
-                    <p>{{post.pub_date}}</p>
-                    <div class="postFooterModifySection">
-                        <a href="{{post.id}}/update" class="myButton">수정</a>
-                        <a href="{{post.id}}/delete" class="myButton">삭제</a>
-                    </div>
-                </div>
+<div id="container">
+    {% for post in posts %}
+    <div class="post">
+        <h1><a href="{{post.id}}/detail" class='title'>{{post.title}}</a></h1>
+        <p>{{post.summary}}</p>
+        <div class="postFooter">
+            <p>{{post.pub_date}}</p>
+            <div class="postFooterModifySection">
+                <a href="{{post.id}}/update" class="myButton">수정</a>
+                <a href="{{post.id}}/delete" class="myButton">삭제</a>
             </div>
-        {% endfor %}
+        </div>
     </div>
+    {% endfor %}
+</div>
+
+{% if posts.has_other_pages %}
+<ul class="pagination">
+    {% if posts.has_previous %}
+    <li><a href="?page={{ posts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+    <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for i in posts.paginator.page_range %}
+    {% if posts.number == i %}
+    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+    {% else %}
+    <li><a href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if posts.has_next %}
+    <li><a href="?page={{ posts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+    <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+</ul>
+{% endif %}
 {% endblock content %}

@@ -10,6 +10,10 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff') format('woff'); 
     font-weight: normal; 
     font-style: normal; }
+
+body *{
+    font-family : 'HangeulNuri-Bold';
+}
 .cont .title {
     font-family : 'Binggrae-Bold';
 }
@@ -24,12 +28,7 @@
     background-color : #DDDDDD;
     width : 80%;
 }
-body *{
-    font-family : 'HangeulNuri-Bold';
-}
-html {
-    background-color : #AA0000;
-}
+
 input, button, a {
     margin-left:10px;
     margin-right : 10px;
@@ -51,4 +50,9 @@ div {
 }
 #commentText {
     background-color : #EEEEEE;
+}
+
+.pagination {
+	width: 200px;
+	background-color: #ffffff;
 }

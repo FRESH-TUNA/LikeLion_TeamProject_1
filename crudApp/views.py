@@ -1,19 +1,38 @@
-from django.shortcuts import redirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from .forms import *
 from django.utils import timezone
-import pdb 
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
     posts = Post.objects.all()
-    return render(request, "crudApp/index.html", {'posts': posts})
+    page = request.GET.get('page', 1)
+    paginator = Paginator(posts, 6)
+    
+    try:
+        selectedPost = paginator.page(page)
+    except PageNotAnInteger:
+        selectedPost = paginator.page(1)
+    except EmptyPage:
+        selectedPost = paginator.page(paginator.num_pages)
+
+    return render(request, "crudApp/index.html", {'posts': selectedPost})
 
 def detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'crudApp/detail.html', {'post': post})
+    comments = Comment.objects.all().filter(post=post)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(comments, 5)
+
+    try:
+        selectedComments = paginator.page(page)
+    except PageNotAnInteger:
+        selectedComments = paginator.page(1)
+    except EmptyPage:
+        selectedComments = paginator.page(paginator.num_pages)
+        
+    return render(request, 'crudApp/detail.html', {'post': post, 'selectedComments':selectedComments})
 
 def create(request):
     if request.method == "GET":
