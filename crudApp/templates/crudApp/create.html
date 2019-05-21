@@ -1,0 +1,19 @@
+{% extends 'crudApp/base.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/create.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+<h1> 추가하자!! </h1>
+<form action="create" method="post">
+{% csrf_token %}
+    <h4>제목: </h4>
+    <input type="text" name="title"></input>
+    <h4>내용: </h4>
+    <textarea type="text" name="content" cols="30" rows="10"></textarea>
+    <br><br>
+    <input type="submit" value="제출하기">
+</form>
+{% endblock content %}
