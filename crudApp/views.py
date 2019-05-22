@@ -3,7 +3,7 @@ from .models import *
 from .forms import *
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.contrib.auth.models import User
 
 def index(request):
     posts = Post.objects.all()

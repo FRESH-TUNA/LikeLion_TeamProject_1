@@ -19,6 +19,9 @@
     {% endblock content %}
     </div>
 
+    <div id="modal">
+    </div>
+
     <footer>
         <div class="footerEle" id="footerCopy">
             <h4>About Production</h4>
@@ -35,5 +38,11 @@
             <img id="likelion" src="https://likelion.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png">
         </div>
     </footer>
+
+    <script src="{% static 'crudApp/js/vue.js' %}"></script>
+    <script type="module" src="{% static 'crudApp/js/index.js' %}"></script>
+    
+    {% block script %}
+    {% endblock script %}
 </body>
 </html>
