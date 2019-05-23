@@ -2,24 +2,26 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'crudApp/css/base.css' %}">
     {% block stylesheet %}
     {% endblock stylesheet %}
 </head>
 <body>
-    <header>
+    <header id="header">
         <p id="title">모두의 수다</p>
         <div id="buttonWrapper">
+            <div @click="showSignupModal = true">로그인</div>
+            <div @click="showSignupModal = true">회원가입</div>
             <a href="create" class="myButton">새 글 만들기</a>
         </div>
+        <signup-modal 
+            v-if="showSignupModal"
+        />
     </header>
     
     <div id="page-content">
     {% block content %}
     {% endblock content %}
-    </div>
-
-    <div id="modal">
     </div>
 
     <footer>
@@ -38,11 +40,11 @@
             <img id="likelion" src="https://likelion.net/assets/logo/likelion-white-a930fbcdf3042a50ba882ece9c02f43536971297a8e143e212d9b92d653bfa44.png">
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="{% static 'crudApp/js/vue.js' %}"></script>
-    <script type="module" src="{% static 'crudApp/js/index.js' %}"></script>
-    
+    <script type="module" src="{% static 'crudApp/js/base.js' %}"></script>
     {% block script %}
     {% endblock script %}
 </body>
 </html>
+

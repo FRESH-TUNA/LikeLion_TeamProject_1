@@ -59,6 +59,7 @@ p#title {
 }
 
 #buttonWrapper {
+    display: flex;
     padding-right: 30px;
 }
 
